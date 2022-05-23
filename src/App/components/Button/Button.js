@@ -3,7 +3,7 @@ import style from "./Button.module.css";
 import PropTypes from "prop-types";
 // contenu du cmp
 function Button(props) {
-  console.warn(props, style);
+  //console.warn(props, style);
   return (
     <button
       className={style.Button}
