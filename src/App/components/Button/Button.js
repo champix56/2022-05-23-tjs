@@ -1,10 +1,10 @@
 import React from "react";
-import './Button.css'
+import style from './Button.module.css'
 // contenu du cmp
 function Button(props) {
   console.warn(props);
   return (
-    <button className="Button"
+    <button className={style.Button}
       onClick={(evt) => {
         props.onButtonClicked()
       }}

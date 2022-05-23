@@ -8,7 +8,6 @@ function App() {
       <br />
       <Button
         text="Hello"
-        color="blue"
         onButtonClicked={() => {
           console.log();
         }}
