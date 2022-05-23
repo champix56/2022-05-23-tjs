@@ -5,7 +5,9 @@ function App() {
   return (
     <div className="App">
      DEMAT BREIZH<br/>
-     <Button text="Hello" color="blue"/>
+     <Button text="Hello" color="blue" onButtonClicked={()=>{
+       console.log();
+     }}/>
      <Button text="Button value"/>
      <Button text="Click ici"/>
      <Button/>

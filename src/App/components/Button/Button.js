@@ -1,10 +1,18 @@
-import React from 'react';
+import React from "react";
 
 // contenu du cmp
 function Button(props) {
-    console.warn(props);
-    return <button>{props.text}</button>;
+  console.warn(props);
+  return (
+    <button
+      onClick={(evt) => {
+        props.onButtonClicked()
+      }}
+    >
+      {props.text}
+    </button>
+  );
 }
 
-//exportation 
+//exportation
 export default Button;
