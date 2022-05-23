@@ -24,7 +24,12 @@ Button.propTypes={
     bgcolor: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
     onButtonClicked: PropTypes.func,
-    type: PropTypes.string,
+    type: PropTypes.string.isRequired,
+}
+Button.defaultProps={
+    bgcolor:'skyblue',
+    color:'white',
+    type:'button',
 }
 //exportation
 export default Button;
