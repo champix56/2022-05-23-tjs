@@ -5,9 +5,9 @@ function App() {
   return (
     <div className="App">
      DEMAT BREIZH<br/>
-     <Button/>
-     <Button/>
-     <Button/>
+     <Button text="Hello" color="blue"/>
+     <Button text="Button value"/>
+     <Button text="Click ici"/>
      <Button/>
      <Button/>
      <Button/>

@@ -2,7 +2,8 @@ import React from 'react';
 
 // contenu du cmp
 function Button(props) {
-    return <button>Benjamin</button>;
+    console.warn(props);
+    return <button>{props.text}</button>;
 }
 
 //exportation 
