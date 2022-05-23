@@ -25,7 +25,7 @@ function Button(props) {
       }}
       type={props.type}
     >
-      {props.text}
+      {props.children}
     </button>
   );
 }
@@ -35,6 +35,7 @@ Button.propTypes = {
   color: PropTypes.string.isRequired,
   onButtonClicked: PropTypes.func,
   type: PropTypes.string.isRequired,
+  children: PropTypes.any.isRequired,
 };
 Button.defaultProps = {
   bgcolor: "skyblue",
