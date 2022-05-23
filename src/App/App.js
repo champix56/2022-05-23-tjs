@@ -1,18 +1,21 @@
-import React from 'react';
-import './App.css';
-import Button from './components/Button/Button'
+import React from "react";
+import "./App.css";
+import Button from "./components/Button/Button";
 function App() {
   return (
     <div className="App">
-     DEMAT BREIZH<br/>
-     <Button text="Hello" color="blue" onButtonClicked={()=>{
-       console.log();
-     }}/>
-     <Button text="Button value"/>
-     <Button text="Click ici"/>
-     <Button/>
-     <Button/>
-     <Button/>
+      DEMAT BREIZH
+      <br />
+      <Button
+        text="Hello"
+        color="blue"
+        onButtonClicked={() => {
+          console.log();
+        }}
+      />
+      <Button text="Button value" />
+      <Button text="Click ici" />
+      <Button />
     </div>
   );
 }

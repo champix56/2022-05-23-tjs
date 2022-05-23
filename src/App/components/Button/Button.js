@@ -1,10 +1,10 @@
 import React from "react";
-
+import './Button.css'
 // contenu du cmp
 function Button(props) {
   console.warn(props);
   return (
-    <button
+    <button className="Button"
       onClick={(evt) => {
         props.onButtonClicked()
       }}
