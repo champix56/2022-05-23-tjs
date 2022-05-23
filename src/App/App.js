@@ -12,6 +12,7 @@ function App() {
           console.log();
         }}
         bgcolor="tomato"
+        color="green"
       />
       <Button text="Button value" />
       <Button text="Click ici" />

@@ -7,9 +7,10 @@ function Button(props) {
     <button className={style.Button}
       onClick={(evt) => {
         props.onButtonClicked()
-      }}
+      }} 
       style={{
-          backgroundColor:props.bgcolor
+          backgroundColor:props.bgcolor,
+          color:props.color,
       }}
     >
       {props.text}
