@@ -11,6 +11,7 @@ function App() {
         onButtonClicked={() => {
           console.log();
         }}
+        bgcolor="tomato"
       />
       <Button text="Button value" />
       <Button text="Click ici" />
