@@ -14,7 +14,7 @@ function App() {
         bgcolor="tomato"
         color="green"
       />
-      <Button text="Button value" />
+      <Button text="Button value" styleDuButton={{textDecoration:'underline blue', fontStyle:'italic'}} />
       <Button text="Click ici" />
       <Button />
     </div>
