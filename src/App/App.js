@@ -8,6 +8,13 @@ class App extends React.Component {
     // valeur initial du conteneur etatique
     this.state={counter:0,message:'aucun message'}
   }
+  componentDidMount(){
+    this.setState({message:'composant monté'});
+    console.log('montage du cmp fini');
+  }
+  componentDidUpdate(prevProps,prevState){
+    console.log('ancienne,actuelle',prevState,this.state);
+  }
   render() {
     return (
       <div className="App" style={{ textAlign: "center" }}>
