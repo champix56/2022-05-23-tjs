@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Button.module.css";
 import PropTypes from "prop-types";
 // contenu du cmp
 function Button(props) {
   const [isClicked, setisClicked] = useState(false);
+  useEffect(() => {
+    if(isClicked===true){setTimeout(()=>setisClicked(false),300)}
+  }, [isClicked])
   return (
     <button
       className={style.Button+(isClicked?' '+style.clicked:'')}
       onClick={(evt) => {
-          setisClicked(true)
+          setisClicked(true);
         if (
           undefined !== props.onButtonClicked &&
           typeof props.onButtonClicked === "function"
