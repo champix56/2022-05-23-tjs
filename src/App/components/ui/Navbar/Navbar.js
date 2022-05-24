@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import style from "./Navbar.module.css";
 import { Navbar as NavBar, Container, Nav } from 'react-bootstrap';
-
+import '../../../../../node_modules/bootstrap/dist/css/bootstrap.css'
 
 const Navbar = (props) => {
   return (
