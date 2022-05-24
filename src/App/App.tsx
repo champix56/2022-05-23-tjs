@@ -53,10 +53,11 @@ class App extends React.Component<{}, IAppState> {
           <MemeSVGViewer
             meme={this.state.meme}
             image={undefined}
-          ></MemeSVGViewer>
+          />
           <MemeForm
             meme={this.state.meme}
             onMemeChange={(meme: IMeme) => this.setState({ meme: meme })}
+            images={this.state.images}
           />
         </FlexWide>
         <Footer>{JSON.stringify(this.state.meme)}</Footer>

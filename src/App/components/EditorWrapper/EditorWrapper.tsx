@@ -1,11 +1,11 @@
 import { MemeSVGViewer } from "orsys-tjs-meme";
-import { IMeme } from "orsys-tjs-meme/dist/interfaces/common";
+import { IImage, IMeme } from "orsys-tjs-meme/dist/interfaces/common";
 import React, { useEffect, useState } from "react";
 import MemeForm from "../MemeForm/MemeForm";
 import style from "./EditorWrapper.module.css";
 
 //types
-interface IEditorWrapperProps {meme:IMeme,onMemeChange:Function}
+interface IEditorWrapperProps {meme:IMeme,onMemeChange:Function,images:Array<IImage>}
 
  
 //component
@@ -16,7 +16,7 @@ const EditorWrapper: React.FC<IEditorWrapperProps> = (props) => {
             meme={props.meme}
             image={undefined}
           />
-          <MemeForm
+          <MemeForm images={props.images}
             meme={props.meme}
             onMemeChange={props.onMemeChange}
           />
