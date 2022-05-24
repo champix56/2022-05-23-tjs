@@ -7,6 +7,7 @@ import Header from "./components/ui/Header/Header";
 import Navbar from "./components/ui/Navbar/Navbar";
 import Footer from "./components/ui/Footer/Footer";
 import { IImage, IMeme } from "orsys-tjs-meme/dist/interfaces/common";
+import EditorWrapper from "./components/EditorWrapper/EditorWrapper";
 interface IAppState {
   meme: IMeme;
   images: Array<IImage>;
@@ -37,10 +38,11 @@ class App extends React.Component<{}, IAppState> {
         <Header />
         <Navbar />
         <FlexWide>
-          <MemeSVGViewer meme={this.state.meme} image={undefined}></MemeSVGViewer>
-          <MemeForm></MemeForm>
+          <EditorWrapper meme={this.state.meme} onMemeChange={(meme: IMeme) => {
+              this.setState({ meme: meme });
+            }}/>
         </FlexWide>
-        <Footer></Footer>
+        <Footer>{JSON.stringify(this.state.meme)}</Footer>
       </div>
     );
   }
