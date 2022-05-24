@@ -1,17 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import style from "./Button.module.css";
 import PropTypes from "prop-types";
+import { IButtonProps } from "./Button.interface";
+
 // contenu du cmp
-function Button(props) {
+const Button:React.FC<IButtonProps> = (props) => {
   const [isClicked, setisClicked] = useState(false);
   useEffect(() => {
-    if(isClicked===true){setTimeout(()=>setisClicked(false),300)}
-  }, [isClicked])
+    if (isClicked === true) {
+      setTimeout(() => setisClicked(false), 300);
+    }
+  }, [isClicked]);
   return (
     <button
-      className={style.Button+(isClicked?' '+style.clicked:'')}
+      className={style.Button + (isClicked ? " " + style.clicked : "")}
       onClick={(evt) => {
-          setisClicked(true);
+        setisClicked(true);
         if (
           undefined !== props.onButtonClicked &&
           typeof props.onButtonClicked === "function"
@@ -28,19 +32,19 @@ function Button(props) {
       {props.children}
     </button>
   );
-}
+};
+/*
 Button.propTypes = {
   bgcolor: PropTypes.string.isRequired,
   styleDuButton: PropTypes.object,
   color: PropTypes.string.isRequired,
   onButtonClicked: PropTypes.func,
-  type: PropTypes.string.isRequired,
   children: PropTypes.any.isRequired,
 };
 Button.defaultProps = {
   bgcolor: "skyblue",
   color: "white",
   type: "button",
-};
+};*/
 //exportation
 export default Button;

@@ -39,7 +39,7 @@ class App extends React.Component {
           Soustraire 1
         </Button>
         <hr />
-        <Button>
+        <Button >
           <div>
             Content button
             <hr />
