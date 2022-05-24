@@ -1,0 +1,5 @@
+.FlexWide {
+  display: flex;
+}
+.FlexWide > * {
+}
