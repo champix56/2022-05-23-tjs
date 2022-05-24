@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import style from "./MemeForm.module.css";
 
 //types
@@ -8,7 +8,7 @@ interface IMemeFormState {}
 const initialState: IMemeFormState = {};
 const MemeForm: React.FC<IMemeFormProps> = (props) => {
   return (
-       <div data-testid="MemeForm" className={styles.MemeForm}>
+       <div data-testid="MemeForm" className={style.MemeForm}>
         <form >
           <h1>Titre</h1>
           <input
