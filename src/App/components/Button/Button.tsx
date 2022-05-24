@@ -23,9 +23,10 @@ const Button:React.FC<IButtonProps> = (props) => {
           props.onButtonClicked();
       }}
       style={{
-        ...props.styleDuButton,
+   
         backgroundColor: props.bgcolor,
-        color: props.color,
+        color: props.color,     
+        ...props.styleDuButton,
       }}
       type={props.type}
     >
