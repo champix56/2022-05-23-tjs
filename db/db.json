@@ -1,0 +1,28 @@
+{
+  "memes": [
+    {
+      "id": 0,
+      "titre": "dummy",
+      "imageId": 0,
+      "text": "1er meme",
+      "x": 0,
+      "y": 50,
+      "color": "#EC0BAE",
+      "fontSize": 40,
+      "fontWeight": "900",
+      "italic": false,
+      "underline": false
+    }
+  ],
+  "images": [
+    {
+      "id": 0,
+      "url": "futurama1.webp",
+      "w": 805,
+      "h": 453,
+      "name": "futurama"
+    },
+    { "id": 1, "url": "simpson.jpg", "w": 1280, "h": 720, "name": "simpson" },
+    { "id": 2, "url": "star.jpg", "w": 752, "h": 423, "name": "star wars" }
+  ]
+}
