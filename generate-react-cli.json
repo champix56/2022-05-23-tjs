@@ -1,0 +1,57 @@
+{
+  "usesTypeScript": false,
+  "usesCssModule": true,
+  "cssPreprocessor": "css",
+  "testLibrary": "Testing Library",
+  "component": {
+    "default": {
+      "path": "src/App/components",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": false
+    },
+    "func": {
+      "path": "src/App/components",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": false,
+      "customTemplates": {
+        "component": "grc_templates/hook_func_js/TemplateName.js"
+      }
+    }
+    ,
+    "tsfunc": {
+      "path": "src/App/components",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": false,
+      "customTemplates": {
+        "component": "grc_templates/hook_func_ts/TemplateName.tsx"
+      }
+    },
+    "ui": {
+      "path": "src/App/components/ui",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": false,
+      "customTemplates": {
+        "component": "grc_templates/hook_func_js/TemplateName.js"
+      }
+    },
+    "layout": {
+      "path": "src/App/components/layout",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": false,
+      "customTemplates": {
+        "component": "grc_templates/layout_func_js/TemplateName.js",
+        "style": "grc_templates/layout_func_js/TemplateName.module.css"
+      }
+    }
+  }
+}
