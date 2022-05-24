@@ -32,15 +32,15 @@ class App extends React.Component<{}, IAppState> {
       images: [],
     };
   }
+  
   render() {
     return (
       <div className="App" style={{ textAlign: "center" }}>
         <Header />
         <Navbar />
         <FlexWide>
-          <EditorWrapper meme={this.state.meme} onMemeChange={(meme: IMeme) => {
-              this.setState({ meme: meme });
-            }}/>
+         <MemeSVGViewer meme={this.state.meme} image={undefined}></MemeSVGViewer>
+         <MemeForm meme={this.state.meme} onMemeChange={(meme:IMeme)=>this.setState({meme:meme})}/>
         </FlexWide>
         <Footer>{JSON.stringify(this.state.meme)}</Footer>
       </div>
