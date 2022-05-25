@@ -1,6 +1,7 @@
 import { IImage, IMeme } from "orsys-tjs-meme/dist/interfaces/common";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { useHistory, useLocation } from "react-router-dom";
 import { ADR_REST, REST_RESSOURCES } from "../../config/config";
 import {
   ACTIONS_CURRENT,
@@ -19,11 +20,13 @@ interface IMemeFormProps {
 }
 
 const MemeForm: React.FC<IMemeFormProps> = (props) => {
+  const history=useHistory();
   const resetMeme = () => {
     props.onMemeChange(emptyMeme);
   };
   const saveMeme = () => {
     store.dispatch({ type: ACTIONS_CURRENT.SAVE_MEME });
+    history.push({pathname:'/thumbnail'})
   };
   return (
     <div data-testid="MemeForm" className={style.MemeForm}>
