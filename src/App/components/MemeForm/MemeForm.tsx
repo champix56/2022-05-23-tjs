@@ -1,20 +1,10 @@
 import { IImage, IMeme } from "orsys-tjs-meme/dist/interfaces/common";
 import React from "react";
 import { ADR_REST, REST_RESSOURCES } from "../../config/config";
+import { emptyMeme } from "../../store/store";
 import Button from "../Button/Button";
 import style from "./MemeForm.module.css";
-const emptyMeme: IMeme = {
-  color: "#000000",
-  titre: "",
-  text: "",
-  x: 0,
-  y: 20,
-  fontSize: 20,
-  fontWeight: "500",
-  imageId: 0,
-  italic: false,
-  underline: false,
-};
+
 //types
 interface IMemeFormProps {
   meme: IMeme;
