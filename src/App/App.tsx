@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { MemeSVGViewer } from "orsys-tjs-meme";
 import FlexWide from "./components/layout/FlexWide/FlexWide";
-import MemeForm from "./components/MemeForm/MemeForm";
+import MemeForm, { ConnectedMemeForm } from "./components/MemeForm/MemeForm";
 import Header from "./components/ui/Header/Header";
 import Navbar from "./components/ui/Navbar/Navbar";
 import Footer from "./components/ui/Footer/Footer";
@@ -10,6 +10,7 @@ import { IImage, IMeme } from "orsys-tjs-meme/dist/interfaces/common";
 import EditorWrapper from "./components/EditorWrapper/EditorWrapper";
 import { ADR_REST, REST_RESSOURCES } from "./config/config";
 import MemeThumbnail from "./components/MemeThumbnail/MemeThumbnail";
+import {ACTIONS_CURRENT} from './store/store'
 interface IAppState {
   meme: IMeme;
   memes: Array<IMeme>;
@@ -18,6 +19,7 @@ interface IAppState {
 class App extends React.Component<{}, IAppState> {
   constructor(props: {}) {
     super(props);
+    console.log(ACTIONS_CURRENT)
     // valeur initial du conteneur etatique
     this.state = {
       meme: {
@@ -69,9 +71,7 @@ class App extends React.Component<{}, IAppState> {
               (img: IImage) => img.id === this.state.meme.imageId
             )}
           />
-          <MemeForm
-            meme={this.state.meme}
-            onMemeChange={(meme: IMeme) => this.setState({ meme: meme })}
+          <ConnectedMemeForm
             images={this.state.images}
           />
         </FlexWide>
