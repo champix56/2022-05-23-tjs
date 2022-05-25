@@ -1,17 +1,17 @@
 {
   "memes": [
     {
-      "id": 0,
-      "titre": "dummy",
-      "imageId": 0,
-      "text": "1er meme",
+      "color": "#000000",
+      "titre": "",
+      "text": "I love react",
       "x": 0,
-      "y": 50,
-      "color": "#EC0BAE",
-      "fontSize": 40,
-      "fontWeight": "900",
+      "y": 20,
+      "fontSize": 20,
+      "fontWeight": "500",
+      "imageId": 2,
       "italic": false,
-      "underline": false
+      "underline": false,
+      "id": 0
     },
     {
       "id": 1,
@@ -40,17 +40,17 @@
       "underline": false
     },
     {
-      "id": 3,
-      "titre": "dummy",
-      "imageId": 1,
-      "text": "1er meme",
-      "x": 0,
-      "y": 50,
-      "color": "#ECFBAE",
-      "fontSize": 40,
-      "fontWeight": "900",
-      "italic": false,
-      "underline": false
+      "color": "#0e72dd",
+      "titre": "",
+      "text": "La force est toi react",
+      "x": 339,
+      "y": 73,
+      "fontSize": 43,
+      "fontWeight": "500",
+      "imageId": 2,
+      "italic": true,
+      "underline": true,
+      "id": 3
     },
     {
       "color": "#000000",
@@ -64,14 +64,105 @@
       "x": 327,
       "y": 50,
       "id": 4
+    },
+    {
+      "color": "#f5f5f5",
+      "titre": "New",
+      "text": "Y a quoi dans mon store ?",
+      "x": 259,
+      "y": 134,
+      "fontSize": 62,
+      "fontWeight": "500",
+      "imageId": 1,
+      "italic": false,
+      "underline": false,
+      "id": 5
+    },
+    {
+      "color": "#000000",
+      "titre": "meme1",
+      "text": "pour react utilise la force",
+      "x": 400,
+      "y": 62,
+      "fontSize": 29,
+      "fontWeight": "500",
+      "imageId": 2,
+      "italic": false,
+      "underline": false,
+      "id": 6
+    },
+    {
+      "color": "#000000",
+      "titre": "Nouveau",
+      "text": "Simpson",
+      "x": 0,
+      "y": 400,
+      "fontSize": 254,
+      "fontWeight": "500",
+      "imageId": 1,
+      "italic": false,
+      "underline": false,
+      "id": 7
+    },
+    {
+      "color": "#efebeb",
+      "titre": "react know",
+      "text": "Tu connais REACT? ;-)",
+      "x": 323,
+      "y": 43,
+      "fontSize": 49,
+      "fontWeight": "500",
+      "imageId": 0,
+      "italic": false,
+      "underline": false,
+      "id": 8
+    },
+    {
+      "color": "#000000",
+      "titre": "",
+      "text": "rbgvfezrghtnyjhtgrf",
+      "x": 0,
+      "y": 20,
+      "fontSize": 20,
+      "fontWeight": "500",
+      "imageId": 0,
+      "italic": false,
+      "underline": false,
+      "id": 9
+    },
+    {
+      "color": "#000000",
+      "titre": "",
+      "text": "",
+      "x": 0,
+      "y": 20,
+      "fontSize": 20,
+      "fontWeight": "500",
+      "imageId": 0,
+      "italic": false,
+      "underline": false,
+      "id": 10
+    },
+    {
+      "color": "#000000",
+      "titre": "",
+      "text": "",
+      "x": 0,
+      "y": 20,
+      "fontSize": 20,
+      "fontWeight": "500",
+      "imageId": 0,
+      "italic": false,
+      "underline": false,
+      "id": 11
     }
   ],
   "images": [
     {
       "id": 0,
-      "url": "futurama1.webp",
-      "w": 805,
-      "h": 453,
+      "url": "futurama.jpg",
+      "w": 1200,
+      "h": 675,
       "name": "futurama"
     },
     {
