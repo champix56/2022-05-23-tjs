@@ -1,7 +1,8 @@
 import { IImage, IMeme } from "orsys-tjs-meme/dist/interfaces/common";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import { ADR_REST, REST_RESSOURCES } from "../../config/config";
-import { emptyMeme } from "../../store/store";
+import { ACTIONS_CURRENT, emptyMeme, store } from "../../store/store";
 import Button from "../Button/Button";
 import style from "./MemeForm.module.css";
 
@@ -11,9 +12,7 @@ interface IMemeFormProps {
   onMemeChange: Function;
   images: Array<IImage>;
 }
-interface IMemeFormState {}
-//etat initial
-const initialState: IMemeFormState = {};
+
 const MemeForm: React.FC<IMemeFormProps> = (props) => {
   const resetMeme=()=>{props.onMemeChange(emptyMeme);}
   const saveMeme = () => {
@@ -25,6 +24,7 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
       (f) => {
         console.log("save ok")//+obj.id);
         resetMeme();
+        //store.dispatch({type:ACTIONS_CURRENT.CLEAR_MEME})
       },
       () => {
         console.log("save failed");
@@ -202,3 +202,17 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
   );
 };
 export default MemeForm;
+function mapStateToProps(storeState:IMeme,ownProps:any){
+  return {
+    ...ownProps,
+    meme:storeState
+  }
+}
+function mapDispatchToProps(dispatch:Function){
+  return {
+    onMemeChange:(meme:IMeme)=>{
+      dispatch({type:ACTIONS_CURRENT.UPDATE_MEME,value:meme})
+    }
+  }
+}
+export const ConnectedMemeForm=connect(mapStateToProps,mapDispatchToProps)(MemeForm);
