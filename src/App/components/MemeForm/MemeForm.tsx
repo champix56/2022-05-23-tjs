@@ -16,20 +16,7 @@ interface IMemeFormProps {
 const MemeForm: React.FC<IMemeFormProps> = (props) => {
   const resetMeme=()=>{props.onMemeChange(emptyMeme);}
   const saveMeme = () => {
-    const prSave=fetch(`${ADR_REST}${REST_RESSOURCES.memes}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(props.meme),
-    }).then(
-      (f) => {
-        console.log("save ok")//+obj.id);
-        resetMeme();
-        //store.dispatch({type:ACTIONS_CURRENT.CLEAR_MEME})
-      },
-      () => {
-        console.log("save failed");
-      }
-    );
+    store.dispatch({type:ACTIONS_CURRENT.SAVE_MEME})
   };
   return (
     <div data-testid="MemeForm" className={style.MemeForm}>
