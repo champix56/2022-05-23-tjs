@@ -2,6 +2,7 @@ import { MemeSVGViewer } from "orsys-tjs-meme";
 import { IImage, IMeme } from "orsys-tjs-meme/dist/interfaces/common";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { IStoreState } from "../../store/store";
 import style from "./MemeThumbnail.module.css";
 
@@ -13,16 +14,18 @@ interface IMemeThumbnailProps {
 
 //component
 const MemeThumbnail: React.FC<IMemeThumbnailProps> = (props) => {
-  console.log(props)
+  console.log(props);
   return (
     <div className={style.MemeThumbnail} data-testid="MemeThumbnail">
       {props.memes.map((meme: IMeme, i: number) => (
-        <div className={style.vignette} key={"thumb" + i}>
-          <MemeSVGViewer
-            meme={meme}
-            image={props.images.find((img) => img.id === meme.imageId)}
-          />
-        </div>
+        <Link to={"/editor/" + meme.id} key={"thumb" + i}>
+          <div className={style.vignette}>
+            <MemeSVGViewer
+              meme={meme}
+              image={props.images.find((img) => img.id === meme.imageId)}
+            />
+          </div>
+        </Link>
       ))}
     </div>
   );
