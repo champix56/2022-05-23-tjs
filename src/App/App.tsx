@@ -12,6 +12,7 @@ import { Link, Route, Switch, withRouter } from "react-router-dom";
 import { emptyMeme, IStoreState, store } from "./store/store";
 import { connect } from "react-redux";
 import { IMeme } from "orsys-tjs-meme/dist/interfaces/common";
+import ThumbnailPDF from "./components/PDF/ThumbnailPDF/ThumbnailPDF";
 
 class App extends React.Component<{}, {}> {
   render() {
@@ -20,10 +21,6 @@ class App extends React.Component<{}, {}> {
         <div className="App" style={{ textAlign: "center" }}>
           <Header />
           <Navbar />
-          <div>
-            <Link to="/">home</Link>&nbsp;<Link to="/editor">editeur</Link>
-            &nbsp;<Link to="/thumbnail">thumbnail</Link>&nbsp;
-          </div>
           <Switch>
             <Route path="/" exact>
               <h1>Bienvenu sur l'app</h1>
@@ -33,6 +30,9 @@ class App extends React.Component<{}, {}> {
             </Route>
             <Route path="/editor/:id">
               <EditorConstructionWithRouter />
+            </Route>
+            <Route path="/thumbnailPDF">
+              <ThumbnailPDF/>
             </Route>
             <Route path="/thumbnail">
               <MemeThumbnail />
