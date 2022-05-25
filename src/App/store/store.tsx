@@ -34,7 +34,9 @@ function currentReducer(
       return state;
   }
 }
-export const store=createStore(currentReducer);
+export const store=createStore(currentReducer,
+    (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+    );
 store.subscribe(()=>{
     console.trace(store.getState())
 })
