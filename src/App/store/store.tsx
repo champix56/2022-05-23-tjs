@@ -1,6 +1,7 @@
 import { IImage, IMeme } from "orsys-tjs-meme/dist/interfaces/common";
 import { combineReducers, createStore } from "redux";
 import { ADR_REST, REST_RESSOURCES } from "../config/config";
+import modalReducer from "./modalreducer";
 
 export const emptyMeme: IMeme = {
   color: "#000000",
@@ -129,6 +130,7 @@ export interface IStoreState {
 const combinedReducers = combineReducers({
   ressources: ressourcesReducer,
   current: currentReducer,
+  modal: modalReducer,
 });
 export const store = createStore(
   combinedReducers,
