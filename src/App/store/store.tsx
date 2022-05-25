@@ -1,5 +1,6 @@
 import { IImage, IMeme } from "orsys-tjs-meme/dist/interfaces/common";
 import { combineReducers, createStore } from "redux";
+import { ADR_REST, REST_RESSOURCES } from "../config/config";
 
 export const emptyMeme: IMeme = {
   color: "#000000",
@@ -46,9 +47,30 @@ const ressourcesReducer = (
     type: string;
     value?: IMeme | IImage;
     values?: Array<IMeme | IImage>;
+    arr_values?: [Array<IImage>, Array<IMeme>];
   }
 ) => {
   switch (action.type) {
+    case "@@INIT":
+      const pimg = fetch(`${ADR_REST}${REST_RESSOURCES.images}`, {
+        method: "GET",
+        headers: { Accept: "application/json" },
+      }).then((f) => f.json());
+      const pmeme = fetch(`${ADR_REST}${REST_RESSOURCES.memes}`, {
+        method: "GET",
+        headers: { Accept: "application/json" },
+      }).then((f) => f.json());
+
+      Promise.all([pimg, pmeme]).then((arr_arr) => {
+        store.dispatch({ type: "INIT_VALUES", arr_values: arr_arr });
+      });
+
+      return state;
+    case "INIT_VALUES":
+      if (undefined !== action.arr_values) {
+        return { images: action.arr_values[0], meme: action.arr_values[1] };
+      } else return state;
+
     case "ADD_MEME":
       return { ...state, memes: [...state.memes, action.value] };
     default:
