@@ -22,8 +22,8 @@ const Navbar = (props) => {
             <LinkContainer to="/editor">
               <Nav.Link>New</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/editor/0">
-              <Nav.Link>Edit id:0</Nav.Link>
+            <LinkContainer to="/thumbnailPDF">
+              <Nav.Link>thumbnail pdf</Nav.Link>
             </LinkContainer>
           </Nav>
         </Container>
