@@ -56,7 +56,7 @@ const EditorConstruction: React.FC<any> = (props) => {
     const foundMeme = props.memes.find(
       (m: IMeme) => m.id === Number(props.match.params?.id)
     );
-   props.selectMeme(foundMeme);
+   props.selectmeme(foundMeme);
   }, [props]);
   return (
     <FlexWide>
