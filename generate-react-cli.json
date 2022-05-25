@@ -20,8 +20,17 @@
       "customTemplates": {
         "component": "grc_templates/hook_func_js/TemplateName.js"
       }
-    }
-    ,
+    }, 
+    "connectfunc": {
+      "path": "src/App/components",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": false,
+      "withLazy": false,
+      "customTemplates": {
+        "component": "grc_templates/connected_func_js/TemplateName.js"
+      }
+    },
     "tsfunc": {
       "path": "src/App/components",
       "withStyle": true,
