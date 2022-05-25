@@ -202,10 +202,10 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
   );
 };
 export default MemeForm;
-function mapStateToProps(storeState:IMeme,ownProps:any){
+function mapStateToProps(storeState:{ressources:{memes:Array<IMeme>,images:Array<IImage>},current:IMeme},ownProps:any){
   return {
     ...ownProps,
-    meme:storeState
+    meme:storeState.current
   }
 }
 function mapDispatchToProps(dispatch:Function){
