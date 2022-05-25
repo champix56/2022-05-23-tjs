@@ -8,7 +8,7 @@ import MemeThumbnail from "./components/MemeThumbnail/MemeThumbnail";
 import ConnectedMemeSvgViewer from "./components/ConnectedMemeSvgViewer/ConnectedMemeSvgViewer";
 import { ConnectedMemeForm } from "./components/MemeForm/MemeForm";
 
-class App extends React.Component<undefined, undefined> {
+class App extends React.Component<{},{}> {
   render() {
     return (
       <div className="App" style={{ textAlign: "center" }}>
