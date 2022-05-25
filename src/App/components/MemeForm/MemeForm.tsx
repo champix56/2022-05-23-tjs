@@ -2,7 +2,7 @@ import { IImage, IMeme } from "orsys-tjs-meme/dist/interfaces/common";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { ADR_REST, REST_RESSOURCES } from "../../config/config";
-import { ACTIONS_CURRENT, emptyMeme, store } from "../../store/store";
+import { ACTIONS_CURRENT, emptyMeme, IStoreState, store } from "../../store/store";
 import Button from "../Button/Button";
 import style from "./MemeForm.module.css";
 
@@ -202,10 +202,11 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
   );
 };
 export default MemeForm;
-function mapStateToProps(storeState:{ressources:{memes:Array<IMeme>,images:Array<IImage>},current:IMeme},ownProps:any){
+function mapStateToProps(storeState:IStoreState,ownProps:any){
   return {
     ...ownProps,
-    meme:storeState.current
+    meme:storeState.current,
+    images:storeState.ressources.images
   }
 }
 function mapDispatchToProps(dispatch:Function){
