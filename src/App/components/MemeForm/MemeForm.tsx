@@ -2,7 +2,12 @@ import { IImage, IMeme } from "orsys-tjs-meme/dist/interfaces/common";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { ADR_REST, REST_RESSOURCES } from "../../config/config";
-import { ACTIONS_CURRENT, emptyMeme, IStoreState, store } from "../../store/store";
+import {
+  ACTIONS_CURRENT,
+  emptyMeme,
+  IStoreState,
+  store,
+} from "../../store/store";
 import Button from "../Button/Button";
 import style from "./MemeForm.module.css";
 
@@ -14,9 +19,11 @@ interface IMemeFormProps {
 }
 
 const MemeForm: React.FC<IMemeFormProps> = (props) => {
-  const resetMeme=()=>{props.onMemeChange(emptyMeme);}
+  const resetMeme = () => {
+    props.onMemeChange(emptyMeme);
+  };
   const saveMeme = () => {
-    store.dispatch({type:ACTIONS_CURRENT.SAVE_MEME})
+    store.dispatch({ type: ACTIONS_CURRENT.SAVE_MEME });
   };
   return (
     <div data-testid="MemeForm" className={style.MemeForm}>
@@ -26,7 +33,40 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
           saveMeme();
         }}
         onReset={(evt: React.FormEvent<HTMLFormElement>) => {
-          resetMeme();
+          store.dispatch({
+            type: "OPEN_MODAL",
+            value: (
+              <div>
+                <h1>Avertissement</h1>
+                Votre meme est sur le point d'etre effacer
+                <hr />
+                <div
+                  style={{
+                    padding: "10px 40px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Button
+                    bgcolor="tomato"
+                    onButtonClicked={() =>
+                      store.dispatch({ type: "CLOSE_MODAL" })
+                    }
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    onButtonClicked={() => {
+                      store.dispatch({ type: "CLOSE_MODAL" });
+                      resetMeme();
+                    }}
+                  >
+                    OK
+                  </Button>
+                </div>
+              </div>
+            ),
+          });
         }}
       >
         <h1>Titre</h1>
@@ -189,18 +229,21 @@ const MemeForm: React.FC<IMemeFormProps> = (props) => {
   );
 };
 export default MemeForm;
-function mapStateToProps(storeState:IStoreState,ownProps:any){
+function mapStateToProps(storeState: IStoreState, ownProps: any) {
   return {
     ...ownProps,
-    meme:storeState.current,
-    images:storeState.ressources.images
-  }
+    meme: storeState.current,
+    images: storeState.ressources.images,
+  };
 }
-function mapDispatchToProps(dispatch:Function){
+function mapDispatchToProps(dispatch: Function) {
   return {
-    onMemeChange:(meme:IMeme)=>{
-      dispatch({type:ACTIONS_CURRENT.UPDATE_MEME,value:meme})
-    }
-  }
+    onMemeChange: (meme: IMeme) => {
+      dispatch({ type: ACTIONS_CURRENT.UPDATE_MEME, value: meme });
+    },
+  };
 }
-export const ConnectedMemeForm=connect(mapStateToProps,mapDispatchToProps)(MemeForm);
+export const ConnectedMemeForm = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MemeForm);

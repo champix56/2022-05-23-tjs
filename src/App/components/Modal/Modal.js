@@ -12,7 +12,7 @@ export const Modal = (props) => {
         <div className={style.container}>
           <div className={style.modalContent}>{props.text}</div>
           <div style={{ textAlign: 'center' }}>
-            <Button onButtonClicked={(evt) => { props.close() }}>OK</Button>
+            {/* <Button onButtonClicked={(evt) => { props.close() }}>OK</Button> */}
           </div>
         </div>
       </div> : null
