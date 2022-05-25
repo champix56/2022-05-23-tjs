@@ -1,4 +1,5 @@
 import { IMeme } from "orsys-tjs-meme/dist/interfaces/common";
+import { createStore } from "redux";
 
 export const emptyMeme: IMeme = {
   color: "#000000",
@@ -21,6 +22,7 @@ function currentReducer(
   state: IMeme = emptyMeme,
   action: { type: string; value?: object }
 ):IMeme {
+    console.log(action.type)
   switch (action.type) {
     case ACTIONS_CURRENT.CLEAR_MEME:
       return { ...emptyMeme };
@@ -32,10 +34,13 @@ function currentReducer(
       return state;
   }
 }
-
-let state=currentReducer(undefined,{type:'init',});
-console.log(state);
-state=currentReducer(state,{type:ACTIONS_CURRENT.UPDATE_MEME,value:{italic:true,underline:true},});
-console.log(state);
-state=currentReducer(state,{type:ACTIONS_CURRENT.CLEAR_MEME,});
-console.log(state);
+export const store=createStore(currentReducer);
+store.subscribe(()=>{
+    console.trace(store.getState())
+})
+/*
+store.dispatch({type:ACTIONS_CURRENT.UPDATE_MEME,value:{italic:true,underline:true},})
+store.dispatch({type:ACTIONS_CURRENT.UPDATE_MEME,value:{text:'hello de lu'},})
+store.dispatch({type:ACTIONS_CURRENT.UPDATE_MEME,value:{fontSize:45},})
+store.dispatch({type:ACTIONS_CURRENT.CLEAR_MEME})
+*/
