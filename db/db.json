@@ -12,6 +12,58 @@
       "fontWeight": "900",
       "italic": false,
       "underline": false
+    },
+    {
+      "id": 1,
+      "titre": "dummy",
+      "imageId": 2,
+      "text": "1er meme",
+      "x": 0,
+      "y": 50,
+      "color": "#CF0BBE",
+      "fontSize": 40,
+      "fontWeight": "900",
+      "italic": false,
+      "underline": false
+    },
+    {
+      "id": 2,
+      "titre": "dummy",
+      "imageId": 0,
+      "text": "1er meme",
+      "x": 0,
+      "y": 50,
+      "color": "#000BAE",
+      "fontSize": 40,
+      "fontWeight": "900",
+      "italic": false,
+      "underline": false
+    },
+    {
+      "id": 3,
+      "titre": "dummy",
+      "imageId": 1,
+      "text": "1er meme",
+      "x": 0,
+      "y": 50,
+      "color": "#ECFBAE",
+      "fontSize": 40,
+      "fontWeight": "900",
+      "italic": false,
+      "underline": false
+    },
+    {
+      "color": "#000000",
+      "fontSize": 40,
+      "fontWeight": "900",
+      "imageId": 2,
+      "italic": false,
+      "text": "Love react and you ?",
+      "titre": "dummy",
+      "underline": true,
+      "x": 327,
+      "y": 50,
+      "id": 4
     }
   ],
   "images": [
@@ -22,7 +74,19 @@
       "h": 453,
       "name": "futurama"
     },
-    { "id": 1, "url": "simpson.jpg", "w": 1280, "h": 720, "name": "simpson" },
-    { "id": 2, "url": "star.jpg", "w": 752, "h": 423, "name": "star wars" }
+    {
+      "id": 1,
+      "url": "simpson.jpg",
+      "w": 1280,
+      "h": 720,
+      "name": "simpson"
+    },
+    {
+      "id": 2,
+      "url": "star.jpg",
+      "w": 752,
+      "h": 423,
+      "name": "star wars"
+    }
   ]
 }
