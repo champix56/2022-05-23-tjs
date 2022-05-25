@@ -63,7 +63,7 @@ function currentReducer(
   }
 }
 
-const ressourcesInitialState = {
+const ressourcesInitialState:{memes:Array<IMeme>,images:Array<IImage>} = {
   memes: [],
   images: [],
 };
@@ -76,7 +76,7 @@ const ressourcesReducer = (
     values?: Array<IMeme | IImage>;
     arr_values?: [Array<IImage>, Array<IMeme>];
   }
-) => {
+): { memes: Array<IMeme>; images: Array<IImage> } => {
   switch (action.type) {
     case "@@INIT":
       const pimg = fetch(`${ADR_REST}${REST_RESSOURCES.images}`, {
@@ -104,13 +104,13 @@ const ressourcesReducer = (
       );
       if (positionMeme === -1) {
         //nouveau meme car pas trouver l'id dans la liste de memes
-        return { ...state, memes: [...state.memes, action.value] };
+        return { ...state, memes: [...state.memes, action.value as IMeme] };
       } else {
         return {
           ...state,
           memes: [
             ...state.memes.slice(0, positionMeme),
-            action.value,
+            action.value as IMeme,
             ...state.memes.slice(positionMeme + 1),
           ],
         };
