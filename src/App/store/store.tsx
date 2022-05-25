@@ -32,3 +32,10 @@ function currentReducer(
       return state;
   }
 }
+
+let state=currentReducer(undefined,{type:'init',});
+console.log(state);
+state=currentReducer(state,{type:ACTIONS_CURRENT.UPDATE_MEME,value:{italic:true,underline:true},});
+console.log(state);
+state=currentReducer(state,{type:ACTIONS_CURRENT.CLEAR_MEME,});
+console.log(state);
