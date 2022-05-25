@@ -68,7 +68,7 @@ const ressourcesReducer = (
       return state;
     case "INIT_VALUES":
       if (undefined !== action.arr_values) {
-        return { images: action.arr_values[0], meme: action.arr_values[1] };
+        return { images: action.arr_values[0], memes: action.arr_values[1] };
       } else return state;
 
     case "ADD_MEME":
