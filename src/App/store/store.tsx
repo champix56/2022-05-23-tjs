@@ -20,7 +20,7 @@ export const ACTIONS_CURRENT = Object.freeze({
 function currentReducer(
   state: IMeme = emptyMeme,
   action: { type: string; value?: object }
-) {
+):IMeme {
   switch (action.type) {
     case ACTIONS_CURRENT.CLEAR_MEME:
       return { ...emptyMeme };
