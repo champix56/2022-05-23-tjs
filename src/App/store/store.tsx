@@ -12,22 +12,22 @@ export const emptyMeme: IMeme = {
   italic: false,
   underline: false,
 };
-export const ACTIONS_CURRENT=Object.freeze({
-    CLEAR_MEME:"CLEAR_MEME",
-    SAVE_MEME:"SAVE_MEME",
-    UPDATE_MEME:"UPDATE_MEME"
-})
+export const ACTIONS_CURRENT = Object.freeze({
+  CLEAR_MEME: "CLEAR_MEME",
+  SAVE_MEME: "SAVE_MEME",
+  UPDATE_MEME: "UPDATE_MEME",
+});
 function currentReducer(
-  state:IMeme = emptyMeme,
+  state: IMeme = emptyMeme,
   action: { type: string; value?: object }
 ) {
   switch (action.type) {
     case ACTIONS_CURRENT.CLEAR_MEME:
-      return {};
+      return { ...emptyMeme };
     case ACTIONS_CURRENT.UPDATE_MEME:
-      return {};
-      case ACTIONS_CURRENT.SAVE_MEME:
-        return {};
+      return { ...state, ...action.value };
+    case ACTIONS_CURRENT.SAVE_MEME:
+      return state;
     default:
       return state;
   }
