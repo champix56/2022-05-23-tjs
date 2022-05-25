@@ -1,0 +1,12 @@
+.MemeThumbnail {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.vignette{
+    max-width: 25vw;
+    height:24vh; 
+}
+.vignette>svg{
+    height:100%;
+}
