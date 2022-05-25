@@ -25,11 +25,37 @@ function currentReducer(
 ): IMeme {
   console.log(action.type);
   switch (action.type) {
+    case "ADD_MEME":
     case ACTIONS_CURRENT.CLEAR_MEME:
       return { ...emptyMeme };
     case ACTIONS_CURRENT.UPDATE_MEME:
       return { ...state, ...action.value };
     case ACTIONS_CURRENT.SAVE_MEME:
+      fetch(
+        `${ADR_REST}${REST_RESSOURCES.memes}${
+          undefined !== state.id ? "/" + state.id : ""
+        }`,
+        {
+          method: undefined !== state.id ? "PUT" : "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(state),
+        }
+      )
+        .then((f) => {
+          return f.json();
+        })
+        .then((o) => {
+          if (undefined === o.id) {
+            //   reponse failed
+            console.log("save failed");
+
+            return;
+          } else {
+            console.log("save ok");
+            store.dispatch({ type: "ADD_MEME", value: o });
+            //traitement de reponse OK
+          }
+        });
       return state;
     default:
       return state;
@@ -72,7 +98,22 @@ const ressourcesReducer = (
       } else return state;
 
     case "ADD_MEME":
-      return { ...state, memes: [...state.memes, action.value] };
+      const positionMeme = state.memes.findIndex(
+        (meme: IMeme) => meme.id === action.value?.id
+      );
+      if (positionMeme === -1) {
+        //nouveau meme car pas trouver l'id dans la liste de memes
+        return { ...state, memes: [...state.memes, action.value] };
+      } else {
+        return {
+          ...state,
+          memes: [
+            ...state.memes.slice(0, positionMeme),
+            action.value,
+            ...state.memes.slice(positionMeme + 1),
+          ],
+        };
+      }
     default:
       return state;
   }
