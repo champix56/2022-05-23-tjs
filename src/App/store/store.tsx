@@ -78,7 +78,7 @@ const ressourcesReducer = (
   }
 ): { memes: Array<IMeme>; images: Array<IImage> } => {
   switch (action.type) {
-    case "@@INIT":
+    case "INIT":
       const pimg = fetch(`${ADR_REST}${REST_RESSOURCES.images}`, {
         method: "GET",
         headers: { Accept: "application/json" },
@@ -140,6 +140,7 @@ export const store = createStore(
 store.subscribe(() => {
   console.trace(store.getState());
 });
+store.dispatch({type:'INIT'})
 /*
 store.dispatch({type:ACTIONS_CURRENT.UPDATE_MEME,value:{italic:true,underline:true},})
 store.dispatch({type:ACTIONS_CURRENT.UPDATE_MEME,value:{text:'hello de lu'},})
