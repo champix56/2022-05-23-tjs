@@ -7,11 +7,12 @@ const createMainWindow = () => {
     width: electronScreen.getPrimaryDisplay().workArea.width,
     height: electronScreen.getPrimaryDisplay().workArea.height,
     show: false,
-    backgroundColor: 'white',
+    backgroundColor: 'grey',
     webPreferences: {
       nodeIntegration: false,
       devTools: isDev
-    }
+    },
+    // autoHideMenuBar: true,
   });
   const startURL = isDev
     ? 'http://localhost:3000'
