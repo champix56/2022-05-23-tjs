@@ -6,4 +6,5 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  actions: { argTypesRegex: '^on[A-Z].*' },
 }
